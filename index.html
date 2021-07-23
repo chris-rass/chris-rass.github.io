@@ -93,7 +93,11 @@
                 <p>The date is the 11<sup>th</sup> of February '21 and we would like you to be a part of
                     it.</p>
             </div>
-			<iframe src="https://free.timeanddate.com/countdown/i7wmlu38/n250/cf100/cm0/cu4/ct0/cs0/ca0/co0/cr0/ss0/cac000/cpc000/pct/tcf1d8e7/fs100/szw448/szh189/iso2022-02-11T15:00:00" allowtransparency="true" frameborder="0" width="448" height="189" display: block>  </iframe>
+			
+			<p id="demo"></p>
+
+
+			
         </div>
     </div>
 </section>
@@ -444,6 +448,37 @@
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'UA-46465113-4', 'auto');
     ga('send', 'pageview');
+	
+// Set the date we're counting down to
+var countDownDate = new Date("Feb 11, 2022 15:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+
+	
 </script>
 </body>
 </html>
