@@ -187,14 +187,14 @@ $(document).ready(function () {
             title: "Chris and Steph's Wedding",
 
             // Event start date
-            start: new Date('Feb 11, 2022 15:00'),
+            start: new Date('Feb 24, 2023 16:00'),
 
             // Event duration (IN MINUTES)
             // duration: 120,
 
             // You can also choose to set an end time
             // If an end time is set, this will take precedence over duration
-            end: new Date('Feb 12, 2022 00:00'),
+            end: new Date('Feb 25, 2023 01:00'),
 
             // Event Address
             address: 'Elora Mill Hotel & Spa, Elora, ON',
@@ -214,8 +214,8 @@ $(document).ready(function () {
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
-        if (MD5($('#invite_code').val()) !== 'fb0d97eb37b17897e827024f051d4923'
-            && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
+        if (MD5($('#invite_code').val()) !== '5531a5834816222280f20d1ef9e95f69'
+            && MD5($('#invite_code').val()) !== 'f20d2fdc4a88274a4e64017d2d546d6d') {
             $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
         } else {
             $.post('https://script.google.com/macros/s/AKfycbwmUO4Gq7uOiPVF-K0EzihroW6OaXeyc3hKIa1RFVctg-tmIPI/exec', data)
